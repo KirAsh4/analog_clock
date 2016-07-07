@@ -10,7 +10,7 @@ Module.register("analog_clock", {
 	},
 
 	getStyles: function() {
-		return ["styles.css"];
+		return ["aclock_styles.css"];
 	},
 
 	start: function() {
@@ -32,7 +32,7 @@ Module.register("analog_clock", {
 			clockCircle.style.background = "url(modules/" + this.name + "/faces/" + this.config.faceImage + ".png)"
 			clockCircle.style.backgroundSize = "100%";
 		} else {
-			clockCircle.style.border = "10px double white";
+			clockCircle.style.border = "5px double white";
 		}
 		var clockFace = document.createElement("div");
 		clockFace.className = "clockFace";
