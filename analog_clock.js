@@ -1,7 +1,8 @@
 Module.register("analog_clock", {
 
 	defaults: {
-		faceImage: 'face-003',
+		faceImage: 'face-001',
+		clockSize: '200px',
 	},
 
 	getScripts: function() {
@@ -24,6 +25,8 @@ Module.register("analog_clock", {
 		var wrapper = document.createElement("div");
 		var clockCircle = document.createElement("div");
 		clockCircle.className = "clockCircle";
+		clockCircle.style.width = this.config.clockSize;
+		clockCircle.style.height = this.config.clockSize;
 
 		if (this.config.faceImage != '' || this.config.faceImage != false) {
 			clockCircle.style.background = "url(modules/" + this.name + "/faces/" + this.config.faceImage + ".png)"
