@@ -1,7 +1,7 @@
 Module.register("analog_clock", {
 
 	defaults: {
-		faceImage: 'face-001',
+		faceImage: false,
 		clockSize: '200px',
 	},
 
@@ -28,10 +28,10 @@ Module.register("analog_clock", {
 		clockCircle.style.width = this.config.clockSize;
 		clockCircle.style.height = this.config.clockSize;
 
-		if (this.config.faceImage != '' || this.config.faceImage != false) {
+		if ((this.config.faceImage != '' || this.config.faceImage != false) && this.config.faceImage != 'none') {
 			clockCircle.style.background = "url(modules/" + this.name + "/faces/" + this.config.faceImage + ".png)"
 			clockCircle.style.backgroundSize = "100%";
-		} else {
+		} else if (this.config.faceImage != 'none') {
 			clockCircle.style.border = "5px double white";
 		}
 		var clockFace = document.createElement("div");
